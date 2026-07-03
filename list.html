@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Guards</title>
+    <title>List | Guards</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script type="module" src="https://js.arcgis.com/5.1/"></script>
   </head>
@@ -18,23 +18,15 @@
     </div>
 
     <div class="card">
-      <div class="card-header">
-        <h1>Attendance Tracker for Personel Guards</h1>
-        <p>Only official Guards can enter the attendance form</p>
-      </div>
+      <h1>Guards' Attendance List</h1>
+      <div class="content"></div>
 
-      <form id="secretForm">
-        <calcite-label>
-          Secret Key *
-          <calcite-input
-            id="secret"
-            placeholder="secret key"
-            required
-          ></calcite-input>
-        </calcite-label>
-        <calcite-button type="submit">Submit</calcite-button>
-      </form>
+      <calcite-button id="another">Fill Another</calcite-button>
     </div>
-    <script src="js/auth.js"></script>
+
+
+
+    <script src="js/validation.js"></script>
+    <script src="js/class.js"></script>
   </body>
 </html>

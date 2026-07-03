@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Guard Inventory</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+  </head>
+
+  <body>
+    <div id="loadingOverlay" class="loading-overlay">
+      <calcite-loader
+        label="Loading..."
+        type="indeterminate"
+        scale="l"
+      ></calcite-loader>
+      <p>Loading attendace form.....</p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header">
+        <h1>Attendance Tracker for Personel Guards</p>
+        <p>Security Guard Inventory</>
+      </div>
+
+      <form id="guardForm">
+        <calcite-label>
+          Your Name *
+          <calcite-input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Joshua De Leon"
+            required
+          ></calcite-input>
+        </calcite-label>
+
+        <calcite-label>
+          Date of Duty *
+          <calcite-input-date-picker
+            id="duty-date"
+            name="duty-date"
+            placeholder="Select a date"
+            required
+          ></calcite-input-date-picker>
+        </calcite-label>
+
+        <calcite-label>
+          Where are you stationed?
+          <div id="miniMap">
+            <arcgis-map
+              center="125.6128,7.0731"
+              zoom="15"
+              basemap="topo-vector"
+            >
+              <arcgis-zoom position="top-left"></arcgis-zoom>
+              <arcgis-locate position="top-left"></arcgis-locate>
+            </arcgis-map>
+          </div>
+          <div class="coordinates">
+            <calcite-input
+              id="latitude"
+              name="latitude"
+              placeholder="latitude"
+              read-only
+              required
+            ></calcite-input>
+            <calcite-input
+              id="longitude"
+              name="longitude"
+              placeholder="longitude"
+              read-only
+              required
+            ></calcite-input>
+          </div>
+        </calcite-label>
+
+        <calcite-label>
+          Duty Shift *
+          <calcite-radio-button-group name="shift" required layout="horizontal">
+            <calcite-label layout="inline">
+              <calcite-radio-button value="morning"></calcite-radio-button>
+              Morning
+            </calcite-label>
+            <calcite-label layout="inline">
+              <calcite-radio-button value="evening"></calcite-radio-button>
+              Evening
+            </calcite-label>
+          </calcite-radio-button-group>
+        </calcite-label>
+
+        <calcite-button type="submit">Submit</calcite-button>
+      </form>
+    </div>
+
+    <script src="js/validation.js"></script>
+    <script type="module" src="js/map.js"></script>
+    <script src="js/class.js"></script>
+    
+  </body>
+</html>

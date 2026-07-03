@@ -17,7 +17,6 @@ body {
   margin: 0 0 0.25rem;
   font-size: 1.6rem;
   line-height: 1.2;
-  color: #1a1a1a;
 }
 
 .card-header p {
@@ -43,10 +42,6 @@ form {
   margin-top: 1.5rem;
 }
 
-calcite-label {
-  width: 100%;
-}
-
 #miniMap {
   height: 320px;
 }
@@ -59,4 +54,29 @@ calcite-label {
 calcite-button {
   margin-top: 0.5rem;
   width: 100%;
+}
+
+calcite-label {
+  width: 100%;
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+}
+
+.loading-overlay p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
 }
